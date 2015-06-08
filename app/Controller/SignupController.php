@@ -1,7 +1,7 @@
 <?php
 
-App::users('AppController','Controller');
-App::users('CakeEmail','Network/Email');
+App::uses('AppController','Controller');
+App::uses('CakeEmail','Network/Email');
 
 class SignupController extends AppController{
 	public $name = 'Signup';
