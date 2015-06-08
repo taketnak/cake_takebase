@@ -45,6 +45,8 @@ class AppModel extends Model {
 			$this->useDbConfig = 'development';
 		}
 
+		//ここで分岐せずにcore.php内で分岐する方が良いのか・・
+
 	}
 
 
