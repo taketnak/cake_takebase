@@ -21,7 +21,7 @@ public $name = 'User';
 			return true;
 	}
 
-
+	//対象フィールドと、フィールド名に「_confirm]をつけた値が等しいかを確認
 	public function conrirm($check){
 		foreach ($check as $key => $value) {
 			if(! isset($this->data[$this->name][$key.'_confirm'])){
