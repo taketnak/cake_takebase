@@ -1,3 +1,6 @@
+
+<h2>会員登録</h2>
+
 <?php echo($this->Form->create()); ?>
 
 <div class ='email'>

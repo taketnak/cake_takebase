@@ -1,3 +1,6 @@
+
+<h2>本登録実施</h2>
+
 <?php echo($this->Form->create()); ?>
 
 <div class='password'>
