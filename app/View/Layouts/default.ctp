@@ -18,46 +18,81 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
-<html>
+<head prefix=”og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#>
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
-
-		echo $this->Html->css('cake.generic');
-
-		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+<?php echo $this->Html->charset(); ?>
+<title><?php echo('title'); ?> </title>
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="">
+<meta name="copyright" content="">
+<?php echo $this->html->meta('icon'); ?>
+<?php
+//	echo $this->Html->script('hogehoge');
+	echo $this->Html->css('common');
+	echo $this->fetch('css');
+	echo $this->fetch('script');
 	?>
+
+<script>
+<?php
+//ここにGoogle analyticsなど
+?>
+</script>
+
 </head>
+
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+<div id="top">
+	<div id="wrapper">
+		<div id="header"><h1>cakePHP sample＆学習</h1></div>
+		<div id="menu">
+			<ul>
+			<li class="home"><?php echo($this->Html->link('home','/Exam/index')); ?></li>
+			<li>XXXXXX</li>
+			<li>XXXXXX</li>
+			<li><?php echo($this->Html->link('ユーザ登録','/Signup/index')); ?></li>
+			<li>XXXXXX</li>
+			</ul>
 		</div>
-		<div id="content">
-
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
+		<div id="contents">
+			<div id="main">
+				<?php echo $this->Session->flash(); ?>
+				<?php echo $this->fetch('content'); ?>
+			</div>
+			<div id="sub">
+				<div class="section"></div>
+				<div class="section">
+					<h2>sample1</h2>
+					<ul>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+					</ul>
+				</div><!-- /.section -->
+				<div class="section">
+					<h2>sample2</h2>
+					<ul>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+					</ul>
+				</div><!-- /.section -->
+			</div><!-- /#sub -->
+			<div id="pageTop">
+				<a href="#top">ページのトップへ戻る</a>
+			</div><!-- /#pageTop -->
+			<div id="footMenu"></div><!-- /#footerMenu -->
+		</div><!-- /#contents -->
 		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
+			<div class="copyright">Copyright &copy; XXXXXXXXXX All Rights Reserved.</div>
+		</div><!-- /#footer -->
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+</div>
+
 </body>
 </html>
