@@ -1,0 +1,13 @@
+#!/bin/bash
+export LANG=C
+export TERM=dump
+APP_PATH=$(cd $(dirname $0));pwd)
+CAKE_CONSOLE_PATH=$(dirname $APP_PATH)/cake/console
+PATH=$PATH:$CAKE_CONSOLE_PATH
+
+export PATH=$PATH:$(dirname $APP_PATH)/cake/console
+
+cd $(dirname $APP_PATH)
+cake $1 $2 $3
+
+# 0 * * * root C:\xampp\htdocs\recipe\app\Vendor/homeb_kickshell home_brew param1 param2
