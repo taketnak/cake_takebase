@@ -89,4 +89,31 @@ class ExamController extends AppController{
 		return $this->response;
 	}
 
+	//PDF出力
+	public function pdf($mode){
+		App::import('Vendor','tcpdf/tcpdf');
+
+		if(($mode !== 'D') && ($mode !== 'I')){
+			throw new Exception("Illegal param");
+			return;
+		}
+
+		$this->RequestHandler->respondAs('application/pdf');
+		$this->autoRender = false;
+
+		$pdf = new TCPDF('P','mm','A4',true,'UTF-8',false);
+		$pdf->AddPage();
+		$pdf->SetXY(50,50);
+		$pdf->Cell(100,30,'0123456789');
+		$pdf->SetXY(50,100);
+		$pdf->Cell(100,30,'abcdefghijklnmopqrstuvwxyz');
+
+		$pdf->SetFont('kozgopromedium');	// 日本語対応フォントをセット
+		$pdf->SetXY(50,150);
+		$pdf->Cell(100,30,'このように表示が可能');
+
+		$pdf->Output('test.pdf',$mode);
+
+	}
+
 }

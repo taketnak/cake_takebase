@@ -33,3 +33,12 @@
 	<?php echo($this->Html->Link('[ダウンロード]','/Exam/download/sampimg.png')); ?>
 </p>
 
+<h4>PDF出力</h4>
+<p>
+	<?php echo($this->Html->Link('[PDF表示]','/Exam/pdf/I')); ?>
+</p>
+
+<p>
+	<?php echo($this->Html->Link('[PDFダウンロード]','/Exam/pdf/D')); ?>
+</p>
+
