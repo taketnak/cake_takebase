@@ -5,7 +5,7 @@ class ExamadmController extends AppController{
 	public $layout = 'defaultadm';  // layout変更
 	public $name = 'Examadm';
 	public $uses = array('User');
-	public $components = array('RequestHandler','Auth');
+	public $components = array('RequestHandler','Auth','Session');
 
 	public function index(){	}
 
@@ -43,5 +43,59 @@ class ExamadmController extends AppController{
 		$this->redirect('../Exam/index');
 	}
 
+	// パラメータ受け取り確認
+	public function paramget(){
+		$name = null;
+		$color = null;
+
+		if(isset($this->request->query['name'])){
+			$name = $this->request->query['name'];
+		}
+		if(isset($this->request->query['color'])){
+			$color = $this->request->query['color'];
+		}
+
+		$message = 'name['.$name.'],color['.$color.']';
+		$this->Session->setFlash($message);
+		$this->redirect('/Examadm/index');
+	}
+
+	public function parampost(){
+		$description = null;
+		$stocks = null;
+		$catchcopy = null;
+		$resolutions = null;
+		$specs = array();
+
+		//nameの受け取り
+		if(isset($this->request->data['description'])){
+			$description = $this->request->data['description'];
+		}
+		//nameの配列受け取り
+		if(isset($this->request->data['stocks']['black'])){
+			$stocks['black'] = $this->request->data['stocks']['black'];
+		}
+		//dataの配列の場合はname記載と同様の受けとり
+		if(isset($this->request->data['catchcopy'])){
+			$catchcopy = $this->request->data['catchcopy'];
+		}
+		//dataの多次元配列もdata省略の形で受け取り可能
+		if(isset($this->request->data['resolution']['x'])){
+			$resolutions['x'] = $this->request->data['resolution']['x'];
+		}
+		//同一名称のパラメータ配列
+		if(isset($this->request->data['specs'])){
+			$specs = $this->request->data['specs'];
+		}
+
+		$message = 'desc['.$description.']'.
+					',stocks['.$stocks['black'].']'.
+					',catchcp['.$catchcopy.']'.
+					',resol['.$resolutions['x'].']'.
+					',specs['.$specs.']';
+		$this->Session->setFlash($message);
+
+		$this->redirect('/Exam/index');
+	}
 
 }
