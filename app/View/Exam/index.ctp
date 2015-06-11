@@ -1,7 +1,7 @@
 
 <?php // Exam/index.ctp   ?>
 
-<h2>各サンプル実装</h2
+<h2>各サンプル実装</h2>
 
 <h3>Controller & view</h3>
 
