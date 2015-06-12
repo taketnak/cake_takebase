@@ -95,7 +95,7 @@ class ExamadmController extends AppController{
 					',specs['.$specs.']';
 		$this->Session->setFlash($message);
 
-		$this->redirect('/Exam/index');
+		$this->redirect('/Examadm/index');
 	}
 
 }
