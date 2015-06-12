@@ -1,4 +1,5 @@
 <?php // Examadm/index.ctp   ?>
+<h2><?php echo $page_title ?></h2>
 
 <h3>Controller & view</h3>
 <h4>色々なリダイレクト例</h4>

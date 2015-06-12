@@ -7,6 +7,25 @@ class ExamadmController extends AppController{
 	public $uses = array('User');
 	public $components = array('RequestHandler','Auth','Session');
 
+
+	//Controller内メソッド開始前共通サンプル
+	public function beforeFilter(){
+		parent::beforeFilter();
+
+		$this->log('examadm start---',LOG_DEBUG);
+
+	}
+
+	//Controller内メソッドの終了後共通サンプル
+	public function beforeRender(){
+		parent::beforeRender();
+
+		$this->set('page_title','examadm');
+
+		$this->log('examadm end---',LOG_DEBUG);
+
+	}
+
 	public function index(){	}
 
 	public function redirect1(){
