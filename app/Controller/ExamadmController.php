@@ -26,7 +26,9 @@ class ExamadmController extends AppController{
 
 	}
 
-	public function index(){	}
+	public function index(){
+		$this->viewset();
+	}
 
 	public function redirect1(){
 		//ログ出力例
@@ -117,4 +119,12 @@ class ExamadmController extends AppController{
 		$this->redirect('/Examadm/index');
 	}
 
+	//コントローラからビューへの値渡しサンプル
+	public function viewset(){
+		$this->set('price',1500);
+		$this->set('title','商品詳細');
+
+		$this->set('user',
+				$this->User->find('first',array('conditions' => array('User.id' => 2))));
+	}
 }

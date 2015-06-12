@@ -41,3 +41,23 @@
 	</form>
 </p>
 
+<h4>コントローラからビューへの値渡しサンプル</h4>
+<ul>
+	<li><?php echo($price); ?></li>
+	<li><?php echo($title); ?></li>
+	<li><?php echo($user['User']['email']) ?></li>
+	<li></li>
+	<li><?php echo(var_dump($user)); ?></li>
+</ul>
+<table>
+	<tr>
+		<th>id</th>
+		<th>email</th>
+	</tr>
+	<tr>
+		<td><?php echo($user['User']['id']) ?></td>
+		<td><?php echo($user['User']['email']) ?></td>
+	</tr>
+</table>
+
+
