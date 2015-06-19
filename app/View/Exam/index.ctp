@@ -42,3 +42,29 @@
 	<?php echo($this->Html->Link('[PDFダウンロード]','/Exam/pdf/D')); ?>
 </p>
 
+<h4>element使用サンプル</h4>
+<h5>商品一覧</h5>
+<table>
+<?php
+	echo($this->element('item/single'));
+	foreach($items as $item){
+		echo($this->element('item',array('item' => $item)));
+	}
+?>
+</table>
+
+<h4>element+requestAction</h4>
+
+<h5>商品一覧２</h5>
+<ul>
+<?php
+	$items = $this->requestAction('items/all_m');
+	foreach($items as $item){
+?>
+<li>
+<?php echo($item['Item']['name']); ?>
+</li>
+<?php
+	}
+?>
+</ul>

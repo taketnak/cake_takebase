@@ -22,6 +22,8 @@
 		"<strong>'{$url}'</strong>"
 	); ?>
 </p>
+<strong>４００エラーカスタマイズ</strong>
+
 <?php
 if (Configure::read('debug') > 0):
 	echo $this->element('exception_stack_trace');

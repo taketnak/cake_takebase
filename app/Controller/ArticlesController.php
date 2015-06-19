@@ -35,4 +35,10 @@ class ArticlesController extends AppController{
 		$this->set('articles',$articles);
 	}
 
+	// 10件呼びだし用サンプル
+	public function limit10(){
+
+
+	}
+
 }

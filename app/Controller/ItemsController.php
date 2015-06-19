@@ -50,4 +50,9 @@ class ItemsController extends AppController {
 		}
 	}
 
+
+	public function all_m(){
+		$itemall = $this->Item->find('all');
+		return $itemall;
+	}
 }

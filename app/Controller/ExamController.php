@@ -3,10 +3,12 @@ App::uses('AppController', 'Controller');
 
 class ExamController extends AppController{
 	public $name = 'Exam';
-	public $uses = array('User');
+	public $uses = array('User','Item');
 	public $components = array('RequestHandler','Auth');
 
 	public function index(){
+		$items = $this->Item->find('all');
+		$this->set('items',$items);
 
 	}
 
