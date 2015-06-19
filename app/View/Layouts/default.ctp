@@ -54,9 +54,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<ul>
 			<li class="home"><?php echo($this->Html->link('site1','/Exam/index')); ?></li>
 			<li><?php echo($this->Html->link('site2','/Examadm/index')); ?></li>
-			<li>XXXXXX</li>
+			<li><?php echo($this->Html->link('site3','/Twoclm/index')); ?></li>
 			<li><?php echo($this->Html->link('ユーザ登録','/Signup/index')); ?></li>
-			<li>XXXXXX</li>
+s			<li>XXXXXX</li>
 			</ul>
 		</div>
 		<div id="contents">

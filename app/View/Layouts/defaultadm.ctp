@@ -33,8 +33,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <?php echo $this->html->meta('icon'); ?>
 <?php
 //	echo $this->Html->script('hogehoge');
-	echo $this->Html->css('common_adm');
-	echo $this->fetch('css');
+//	echo $this->Html->css('common_adm');
+//	echo $this->fetch('css');
 	echo $this->fetch('script');
 	?>
 
@@ -54,7 +54,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<ul>
 			<li class="home"><?php echo($this->Html->link('site1','/Exam/index')); ?></li>
 			<li><?php echo($this->Html->link('site2','/Examadm/index')); ?></li>
-			<li>XXXXXX</li>
+			<li><?php echo($this->Html->link('site3','Twoclm/index')); ?></li>
 			<li><?php echo($this->Html->link('ユーザ登録','/Signup/index')); ?></li>
 			<li>XXXXXX</li>
 			</ul>
