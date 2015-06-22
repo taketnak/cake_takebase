@@ -7,6 +7,10 @@ App::uses('AppModel', 'Model');
  */
 class Member extends AppModel {
 
+	// デフォルトのソート順を指定
+	public $order = array('Member.age','Member.id');
+
+
 /**
  * Validation rules
  *

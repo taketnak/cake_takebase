@@ -13,8 +13,20 @@ class MembersController extends AppController {
  */
 //	public $scaffold;
 
-	public function index(){
 
+	public function index(){
+		// MAX取得方法
+		// $max_age = $this->Member->find('first',array('fields' => array('max(age) as Member.age_max')));
+		$max_age = $this->Member->find('first',array('fields' => array('max(age)')));
+
+		$this->log($max_age,LOG_DEBUG);
+
+
+		// COUNT 条件合致するレコード取得方法
+		$mngr_count = $this->Member->find('count',array('conditions' => array('Member.is_manager' => true)));
+
+		$this->set('max',$max_age[0]['max(age)']);
+		$this->set('mngr_count',$mngr_count);
 	}
 
 	public function all(){
@@ -45,7 +57,7 @@ class MembersController extends AppController {
 
 	//between
 	public function obtainAround30(){
-		return $this->Member->find('all',array('conditions' => array('Member.age between ? and ?' => array(30,39))));
+		return $this->Member->find('all',array('conditions' => array('Member.age between ? and ?' => array(30,39)),'order' => 'Member.name desc'));
 	}
 
 	//日付
@@ -53,8 +65,25 @@ class MembersController extends AppController {
 		return $this->Member->find('all',array('conditions' => array('Member.member_from >=' => date('Y-m-d',strtotime('-60 days')))));
 	}
 
-	//部署と名前のみ
+	//必要なフィールドのみ取得（idと名前と部署名のみ）
+	public function obatainFlName(){
+		return $this->Member->find('all', array('field' => array('Member.id','Member.name','Division.name')));
+	}
 
+	//開始行と取得行数を指定（直 と ページ）
+	public function obtainLimit($param){
+		if($param == "d"){			// 直接指定
+			return $this->Member->find('all', array('conditions' => array('Member.is_manager' => false),
+								'offset' => 2,
+								'limit' => 3));
+
+		}else if($param == "p"){		// ページ指定
+			return $this->Member->find('all',array('conditions' => array('Member.is_manager' => false),
+								'page' => 2,
+								'limit' => 3));
+
+		}
+	}
 
 
 }
