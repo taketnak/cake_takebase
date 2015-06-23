@@ -5,7 +5,6 @@ App::uses('AppController', 'Controller');
  *
  */
 class HumansController extends AppController {
-public $layout = 'default_bk';  // layout変更
 public $uses = array('Human','Division');
 public $components = array('Paginator','Session');
 public $paginate = array(

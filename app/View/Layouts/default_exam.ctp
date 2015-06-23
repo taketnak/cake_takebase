@@ -33,7 +33,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <?php echo $this->html->meta('icon'); ?>
 <?php
 //	echo $this->Html->script('hogehoge');
-	echo $this->Html->css('common_adm');
+	echo $this->Html->css('common');
 	echo $this->fetch('css');
 	echo $this->fetch('script');
 	?>
@@ -54,9 +54,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<ul>
 			<li class="home"><?php echo($this->Html->link('site1','/Exam/index')); ?></li>
 			<li><?php echo($this->Html->link('site2','/Examadm/index')); ?></li>
-			<li><?php echo($this->Html->link('site3','Twoclm/index')); ?></li>
+			<li><?php echo($this->Html->link('site3','/Twoclm/index')); ?></li>
 			<li><?php echo($this->Html->link('ユーザ登録','/Signup/index')); ?></li>
-			<li>XXXXXX</li>
+s			<li>XXXXXX</li>
 			</ul>
 		</div>
 		<div id="contents">
@@ -64,6 +64,25 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<?php echo $this->Session->flash(); ?>
 				<?php echo $this->fetch('content'); ?>
 			</div>
+			<div id="sub">
+				<div class="section"></div>
+				<div class="section">
+					<h2>sample1</h2>
+					<ul>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+					</ul>
+				</div><!-- /.section -->
+				<div class="section">
+					<h2>sample2</h2>
+					<ul>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+						<li>XXXXXXXXX</li>
+					</ul>
+				</div><!-- /.section -->
+			</div><!-- /#sub -->
 			<div id="pageTop">
 				<a href="#top">ページのトップへ戻る</a>
 			</div><!-- /#pageTop -->
