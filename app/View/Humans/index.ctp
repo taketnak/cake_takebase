@@ -1,4 +1,12 @@
 <div class="humans index">
+	<h2>search</h2>
+<?php
+	echo($this->Form->create('search'));
+	echo($this->Form->input('sc_name',array('label' => '名前')));
+	echo($this->Form->input('sc_age',array('label' => '年齢')));
+	echo($this->Form->end('検索'));
+?>
+
 	<h2><?php echo __('Humans'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>

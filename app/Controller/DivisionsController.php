@@ -12,5 +12,9 @@ class DivisionsController extends AppController {
  * @var mixed
  */
 	public $scaffold;
+	public function obtainSeisan(){
+		return $this->Division->find('all',array('conditions' => array(
+									'not' => array('Division.name' => array('総務部','営業部')))));
+	}
 
 }
