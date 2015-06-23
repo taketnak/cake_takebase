@@ -30,8 +30,8 @@ class DivisionFixture extends CakeTestFixture {
 		array(
 			'id' => 1,
 			'name' => 'Lorem ipsum dolor sit amet',
-			'created' => '2015-06-19 17:02:03',
-			'modified' => '2015-06-19 17:02:03'
+			'created' => '2015-06-23 11:16:07',
+			'modified' => '2015-06-23 11:16:07'
 		),
 	);
 

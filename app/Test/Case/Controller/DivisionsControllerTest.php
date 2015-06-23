@@ -14,6 +14,7 @@ class DivisionsControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'app.division',
+		'app.human',
 		'app.member'
 	);
 

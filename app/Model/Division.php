@@ -3,6 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Division Model
  *
+ * @property Human $Human
  * @property Member $Member
  */
 class Division extends AppModel {
@@ -33,6 +34,19 @@ class Division extends AppModel {
  * @var array
  */
 	public $hasMany = array(
+		'Human' => array(
+			'className' => 'Human',
+			'foreignKey' => 'division_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'Member' => array(
 			'className' => 'Member',
 			'foreignKey' => 'division_id',

@@ -20,7 +20,8 @@ class HumanFixture extends CakeTestFixture {
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => 'CURRENT_TIMESTAMP'),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => 'CURRENT_TIMESTAMP'),
 		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			'PRIMARY' => array('column' => 'id', 'unique' => 1),
+			'id' => array('column' => 'id', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_unicode_ci', 'engine' => 'MyISAM')
 	);
@@ -38,8 +39,8 @@ class HumanFixture extends CakeTestFixture {
 			'age' => 1,
 			'is_manager' => 1,
 			'member_from' => '2015-06-22',
-			'created' => '2015-06-22 11:48:52',
-			'modified' => '2015-06-22 11:48:52'
+			'created' => '2015-06-22 16:09:56',
+			'modified' => '2015-06-22 16:09:56'
 		),
 	);
 

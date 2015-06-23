@@ -14,6 +14,7 @@ class DivisionTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.division',
+		'app.human',
 		'app.member'
 	);
 
